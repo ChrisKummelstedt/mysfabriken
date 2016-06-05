@@ -1,15 +1,19 @@
 angular.module('mysFabriken', [])
+
+.factory('items', [function(){
+  var items = {
+    items: []
+  };
+  return items;
+}])
+
 .controller('MainCtrl', [
   '$scope',
-  function($scope){
+  'items',
+  function($scope, items){
 
-    $scope.items = [
-      {title: 'post 1', upvotes: 5},
-      {title: 'post 2', upvotes: 2},
-      {title: 'post 3', upvotes: 15},
-      {title: 'post 4', upvotes: 9},
-      {title: 'post 5', upvotes: 4}
-    ];
+    $scope.items = items.items;
+
 
     $scope.addItem = function(){
       //Validation: not empty
@@ -20,12 +24,12 @@ angular.module('mysFabriken', [])
         title: $scope.title,
         description: $scope.description,
         upvotes: 0});
-      $scope.title = '';
-      $scope.description = '';
-    };
+        $scope.title = '';
+        $scope.description = '';
+      };
 
-    $scope.incrementUpvotes = function(item) {
-      item.upvotes += 1;
-    };
+      $scope.incrementUpvotes = function(item) {
+        item.upvotes += 1;
+      };
 
-  }]);
+    }]);
