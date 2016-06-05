@@ -1,0 +1,13 @@
+.glyphicon-heart {
+  cursor:pointer
+}
+
+div#itemlikes div{
+  float:right;
+  font-size: 150%;
+}
+
+div#itemtitle span{
+  text-transform: capitalize;
+  font-size: 150%;
+}
