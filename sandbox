@@ -13,9 +13,11 @@
 <body ng-app="mysFabriken" ng-controller="MainCtrl">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
+
       <div class="page-header">
         <h1>Mysfabriken</h1>
       </div>
+
 
       <!--Show all items-->
       <div ng-repeat="item in items" | orderBy: '-upvotes'>
@@ -34,7 +36,6 @@
           </div>
         </div>
       </div>
-      <!--^ Show all items ^-->
 
       <!--Add more items-->
       <form ng-submit="addItem()" style="margin-top:30px;">
@@ -53,7 +54,6 @@
         </div>
         <button type="submit" class="btn btn-primary">Add item</button>
       </form>
-      <!--^ Add more items ^-->
 
     </div>
   </div>
